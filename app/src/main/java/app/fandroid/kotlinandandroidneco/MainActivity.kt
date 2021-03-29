@@ -8,15 +8,14 @@ import app.fandroid.kotlinandandroidneco.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-    lateinit var bt : Button // вне функций, то в функции можно указать слушатель следующим образом:
+    var tv : TextView? = null
+
     override fun onCreate(s: Bundle?) {
         super.onCreate(s)
         setContentView(R.layout.activity_main)
-        var tv : TextView = findViewById(R.id.vTest)
-        tv.text = "ПРИВЕДДДДДД"
-        bt = findViewById(R.id.bTest)              //Сначала находим кнопку
-        bt.setOnClickListener {                    //СЛУШАТЕЛЬ   setOnClickListener
-            tv.text = "Hello!!!!!!!!!"
+        tv = findViewById(R.id.vTest)
+        tv?.text = "ПРИВЕДДДДДД"
+
+
         }
     }
-}
