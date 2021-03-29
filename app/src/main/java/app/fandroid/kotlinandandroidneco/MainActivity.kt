@@ -16,7 +16,5 @@ class MainActivity : AppCompatActivity() {
         tv = findViewById(R.id.vTest)
         tv?.text = "ПРИВЕДДДДДД"
 
-
-
     }
 }
