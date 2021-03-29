@@ -8,18 +8,18 @@ import app.fandroid.kotlinandandroidneco.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-    var tv : TextView? = null
+    lateinit var tv : TextView  //аналог var tv : TextView? = null
 
     override fun onCreate(s: Bundle?) {
         super.onCreate(s)
         setContentView(R.layout.activity_main)
         tv = findViewById(R.id.vTest)
-        tv?.text = "ПРИВЕДДДДДД"
+        tv.text = "ПРИВЕДДДДДД"
 
     }
 
     override fun onPause() {
         super.onPause()
-        tv?.text = "ПРИ ПАУЗЕ"
+        tv.text = "ПРИ ПАУЗЕ"
     }
 }
