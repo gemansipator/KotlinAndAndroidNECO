@@ -17,4 +17,9 @@ class MainActivity : AppCompatActivity() {
         tv?.text = "ПРИВЕДДДДДД"
 
     }
+
+    override fun onPause() {
+        super.onPause()
+        tv?.text = "ПРИ ПАУЗЕ"
+    }
 }
