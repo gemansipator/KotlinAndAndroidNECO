@@ -17,5 +17,6 @@ class MainActivity : AppCompatActivity() {
         tv?.text = "ПРИВЕДДДДДД"
 
 
-        }
+
     }
+}
