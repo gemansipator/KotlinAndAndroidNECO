@@ -24,7 +24,10 @@ class MainActivity : AppCompatActivity() {
         }
         bidingClass.bTest2.setOnClickListener {
             bidingClass.vTest.visibility = View.VISIBLE
-        }
+        }                                                     //Ставим слушатель нажатий bidingClass.bTest2.setOnClickListener
+                                                             //через bidingClass находим .vTest ставим параметр .visibility
+                                                             //и через общий класс вьюшек View ставим параметр GONE (свернуть)
+                                                             // или VISIBLE (показать) или INVISIBLE (невидимый но активный)
 
 
     }
