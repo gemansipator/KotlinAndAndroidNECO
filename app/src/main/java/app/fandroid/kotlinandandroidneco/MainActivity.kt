@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             bidingClass.tvResult.text = "Результат умножения равен : $result"
 
         }
-        //  АНАЛОГ:
+        // АНАЛОГ:
         // bidingClass.b3.setOnClickListener {
         //            val result = (a * b).toString()
         //
