@@ -13,27 +13,43 @@ class MainActivity : AppCompatActivity() {
     lateinit var bidingClass : ActivityMainBinding  //название может быть любое. Не только bindingClass. Binding превратил activity_main
     //в класс ActivityMain который заносится в переменную bindingClass
 
+    val a = 324
+    val b = 34
+
+
     override fun onCreate(s: Bundle?) {
         super.onCreate(s)
         bidingClass = ActivityMainBinding.inflate(layoutInflater) //Надувает класс/ делает активным и готовым для рисования , иннициализирует, заносит в память
         setContentView(bidingClass.root)                          //ПЕРЕДАЕТСЯ ИЗ bidingClass в класс MainActivity через ее функцию setContentView на
         //class MainActivity чтобы соединить с class MainActivity. Теперь это работает в class MainActivity. Пишем .root чтобы охватывало всЁ что есть
         // в ConstrainLayout
-        bidingClass.bTest.setOnClickListener {
-            bidingClass.vTest.visibility = View.GONE
+
+        bidingClass.b1.setOnClickListener {
+            val result = a + b
+
+            bidingClass.tvResult.text = "Результат сложения равен : $result" //если пришем resuilt без шаблона $ и вне стринга "..." тогда
+            //приводим реультат result  к стрингу   -       =result.toString()
+
         }
-        bidingClass.bTest2.setOnClickListener {
-            bidingClass.vTest.visibility = View.VISIBLE
-        }                                                     //Ставим слушатель нажатий bidingClass.bTest2.setOnClickListener
-                                                             //через bidingClass находим .vTest ставим параметр .visibility
-                                                             //и через общий класс вьюшек View ставим параметр GONE (свернуть)
-                                                             // или VISIBLE (показать) или INVISIBLE (невидимый но активный)
+        bidingClass.b2.setOnClickListener {
+            val result = a - b
 
+            bidingClass.tvResult.text = "Результат вычитания равен : $result"
+
+        }
+        bidingClass.b3.setOnClickListener {
+            val result = a * b
+
+            bidingClass.tvResult.text = "Результат умножения равен : $result"
+
+        }
+        // АНАЛОГ:
+        // bidingClass.b3.setOnClickListener {
+        //            val result = (a * b).toString()
+        //
+        //            bidingClass.tvResult.text = result
 
     }
 
-    override fun onPause() {
-        super.onPause()
-        bidingClass.vTest.text = "НА ПАУЗЕ!!!!!!"
-    }
+
 }
