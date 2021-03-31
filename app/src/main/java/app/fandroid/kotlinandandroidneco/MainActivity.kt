@@ -13,8 +13,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var bidingClass : ActivityMainBinding  //название может быть любое. Не только bindingClass. Binding превратил activity_main
     //в класс ActivityMain который заносится в переменную bindingClass
 
-    val a = 324
-    val b = 34
+    val maxPerson = 95
+    val currentPerson = 35
 
 
     override fun onCreate(s: Bundle?) {
@@ -25,29 +25,21 @@ class MainActivity : AppCompatActivity() {
         // в ConstrainLayout
 
         bidingClass.b1.setOnClickListener {
-            val result = a + b
-
-            bidingClass.tvResult.text = "Результат сложения равен : $result" //если пришем resuilt без шаблона $ и вне стринга "..." тогда
-            //приводим реультат result  к стрингу   -       =result.toString()
-
+            if (maxPerson > currentPerson) bidingClass.tvResult.text = "Всё в порядке"
+            else bidingClass.tvResult.text = "превышает максимальное количество персон"
         }
-        bidingClass.b2.setOnClickListener {
-            val result = a - b
 
-            bidingClass.tvResult.text = "Результат вычитания равен : $result"
+
+        bidingClass.b2.setOnClickListener {
+
+
 
         }
         bidingClass.b3.setOnClickListener {
-            val result = a * b
 
-            bidingClass.tvResult.text = "Результат умножения равен : $result"
 
         }
-        // АНАЛОГ:
-        //  bidingClass.b3.setOnClickListener {
-        //  val result = (a * b).toString()
-        //
-        //            bidingClass.tvResult.text = result
+
 
     }
 

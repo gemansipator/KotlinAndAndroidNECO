@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Сложить"
+        android:text="Количество"
         app:layout_constraintEnd_toEndOf="@+id/tvResult"
         app:layout_constraintStart_toStartOf="@+id/tvResult"
         app:layout_constraintTop_toBottomOf="@+id/tvResult" />
