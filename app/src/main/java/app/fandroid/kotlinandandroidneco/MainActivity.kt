@@ -1,5 +1,6 @@
 package app.fandroid.kotlinandandroidneco
 
+import android.graphics.Color
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.View
@@ -25,13 +26,13 @@ class MainActivity : AppCompatActivity() {
         // в ConstrainLayout
 
         bidingClass.b1.setOnClickListener {
-//            if (maxPerson > currentPerson) bidingClass.tvResult.text = "Всё в порядке"
-//            else bidingClass.tvResult.text = "превышает максимальное количество персон"
-            //УЛУЧШЕННЫЙ КОД НИЖЕ (bindingClass ПОТОМ условие):
-            bidingClass.tvResult.text = if (maxPerson > currentPerson)
-                "Все впорядке"
-            else
-                "Превышено максимальное количество посетителей"
+            if (maxPerson > currentPerson) {
+                bidingClass.tvResult.text = "Всё в порядке"
+                bidingClass.tvResult.setBackgroundColor(Color.RED)
+            }                                                     //если несколько строк в уcловии то ставим {}
+            else bidingClass.tvResult.text = "превышает максимальное количество персон"
+
+              "Превышено максимальное количество посетителей"
         }
 
 
