@@ -25,8 +25,13 @@ class MainActivity : AppCompatActivity() {
         // в ConstrainLayout
 
         bidingClass.b1.setOnClickListener {
-            if (maxPerson > currentPerson) bidingClass.tvResult.text = "Всё в порядке"
-            else bidingClass.tvResult.text = "превышает максимальное количество персон"
+//            if (maxPerson > currentPerson) bidingClass.tvResult.text = "Всё в порядке"
+//            else bidingClass.tvResult.text = "превышает максимальное количество персон"
+            //УЛУЧШЕННЫЙ КОД НИЖЕ (bindingClass ПОТОМ условие):
+            bidingClass.tvResult.text = if (maxPerson > currentPerson)
+                "Все впорядке"
+            else
+                "Превышено максимальное количество посетителей"
         }
 
 
