@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         }
         // АНАЛОГ:
-        // bidingClass.b3.setOnClickListener {
+        //  bidingClass.b3.setOnClickListener {
         //            val result = (a * b).toString()
         //
         //            bidingClass.tvResult.text = result
