@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
 
     val maxPerson = 90
     val currentPerson = 35
+    val text = "опасность"
+    val text2 = "не опасность"
 
 
     override fun onCreate(s: Bundle?) {
@@ -27,10 +29,12 @@ class MainActivity : AppCompatActivity() {
 
         bindingClass.b1.setOnClickListener {
 
-            bindingClass.tvResult.text = when(maxPerson > currentPerson){
+            bindingClass.tvResult.text = when(text){
 
-                false -> "Предел превышен"
-                true -> "Все впорядке"
+                text -> "Предел превышен"
+                text2 -> "Все впорядке"
+
+                else -> "Не понятно"
 
 
             }
