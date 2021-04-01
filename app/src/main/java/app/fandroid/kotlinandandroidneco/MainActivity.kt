@@ -29,12 +29,12 @@ class MainActivity : AppCompatActivity() {
 
         bindingClass.b1.setOnClickListener {
 
-            bindingClass.tvResult.text = when(text){
 
-                text -> "Предел превышен"
-                text2 -> "Все впорядке"
+            when(text){
 
-                else -> "Не понятно"
+                text -> bindingClass.tvResult.text ="Предел превышен"
+                text2 -> bindingClass.tvResult.text = "Все впорядке"
+
 
 
             }
