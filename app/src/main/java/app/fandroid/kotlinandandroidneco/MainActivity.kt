@@ -31,6 +31,9 @@ class MainActivity : AppCompatActivity() {
 
                 in 0..maxPerson ->  "Okey!!!"
                 else ->  "Bag....."
+                //НАОБОРОТ:
+                //   !in 0..maxPerson -> "Bag....."
+                //           else ->  "Okey!!!"
 
                 //также можно проверять (уже без when) число например 90 -> bindingClass.tvResult.text = "Okey!!!"
             }
