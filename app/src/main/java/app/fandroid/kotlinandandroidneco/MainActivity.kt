@@ -27,10 +27,10 @@ class MainActivity : AppCompatActivity() {
 
         bindingClass.b1.setOnClickListener {
 
-            when(currentPerson){
+            bindingClass.tvResult.text = when(currentPerson){
 
-                in 0..maxPerson -> bindingClass.tvResult.text = "Okey!!!"
-                else -> bindingClass.tvResult.text = "Bag....."
+                in 0..maxPerson ->  "Okey!!!"
+                else ->  "Bag....."
 
                 //также можно проверять (уже без when) число например 90 -> bindingClass.tvResult.text = "Okey!!!"
             }
