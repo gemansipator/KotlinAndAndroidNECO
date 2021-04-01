@@ -27,21 +27,12 @@ class MainActivity : AppCompatActivity() {
 
         bindingClass.b1.setOnClickListener {
 
-            bindingClass.tvResult.text = when(currentPerson){
+            bindingClass.tvResult.text = when(maxPerson > currentPerson){
 
-                in 0..maxPerson ->  "Okey!!!"
-                else ->  "Bag....."
-
-                //НАОБОРОТ:
-                //   !in 0..maxPerson -> "Bag....."
-                //           else ->  "Okey!!!"
-
-                //ПЕРЕЧИСЛЕНИЕ
-                // 90,91,92 -> "Предел превышен"
-                //  else -> "Все впорядке"
+                false -> "Предел превышен"
+                true -> "Все впорядке"
 
 
-                //также можно проверять (уже без when) число например 90 -> bindingClass.tvResult.text = "Okey!!!"
             }
 
 
