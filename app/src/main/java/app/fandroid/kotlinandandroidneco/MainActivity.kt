@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var bindingClass : ActivityMainBinding  //название может быть любое. Не только bindingClass. Binding превратил activity_main
     //в класс ActivityMain который заносится в переменную bindingClass
 
-    val maxPerson = 95
+    val maxPerson = 90
     val currentPerson = 35
 
 
@@ -31,12 +31,20 @@ class MainActivity : AppCompatActivity() {
 
                 in 0..maxPerson ->  "Okey!!!"
                 else ->  "Bag....."
+
                 //НАОБОРОТ:
                 //   !in 0..maxPerson -> "Bag....."
                 //           else ->  "Okey!!!"
 
+                //ПЕРЕЧИСЛЕНИЕ
+                // 90,91,92 -> "Предел превышен"
+                //  else -> "Все впорядке"
+
+
                 //также можно проверять (уже без when) число например 90 -> bindingClass.tvResult.text = "Okey!!!"
             }
+
+
         }
 
 
