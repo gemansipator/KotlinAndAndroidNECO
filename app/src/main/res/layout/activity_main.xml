@@ -8,43 +8,49 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tvResult"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:text="Количество персон"
+        android:layout_marginTop="284dp"
+        android:text="Введите количество Ваших подписчиков"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/b1"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/edValue"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Количество"
-        app:layout_constraintEnd_toEndOf="@+id/tvResult"
-        app:layout_constraintStart_toStartOf="@+id/tvResult"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="кол-во подписчиков"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#3A4E3B"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/edValue"
+        app:layout_constraintStart_toStartOf="@+id/edValue"
+        app:layout_constraintTop_toBottomOf="@+id/edValue"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Провести проверку"
+        app:layout_constraintEnd_toEndOf="@+id/edValue"
+        app:layout_constraintStart_toStartOf="@+id/edValue"
         app:layout_constraintTop_toBottomOf="@+id/tvResult" />
-
-    <Button
-        android:id="@+id/b2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Отнять"
-        app:layout_constraintEnd_toEndOf="@+id/b1"
-        app:layout_constraintStart_toStartOf="@+id/b1"
-        app:layout_constraintTop_toBottomOf="@+id/b1" />
-
-    <Button
-        android:id="@+id/b3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Умножить"
-        app:layout_constraintEnd_toEndOf="@+id/b2"
-        app:layout_constraintStart_toStartOf="@+id/b2"
-        app:layout_constraintTop_toBottomOf="@+id/b2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
