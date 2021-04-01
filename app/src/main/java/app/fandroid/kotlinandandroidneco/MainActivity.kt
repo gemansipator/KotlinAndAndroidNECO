@@ -11,7 +11,7 @@ import app.fandroid.kotlinandandroidneco.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-    lateinit var bidingClass : ActivityMainBinding  //название может быть любое. Не только bindingClass. Binding превратил activity_main
+    lateinit var bindingClass : ActivityMainBinding  //название может быть любое. Не только bindingClass. Binding превратил activity_main
     //в класс ActivityMain который заносится в переменную bindingClass
 
     val maxPerson = 95
@@ -20,30 +20,29 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(s: Bundle?) {
         super.onCreate(s)
-        bidingClass = ActivityMainBinding.inflate(layoutInflater) //Надувает класс/ делает активным и готовым для рисования , иннициализирует, заносит в память
-        setContentView(bidingClass.root)                          //ПЕРЕДАЕТСЯ ИЗ bidingClass в класс MainActivity через ее функцию setContentView на
+        bindingClass = ActivityMainBinding.inflate(layoutInflater) //Надувает класс/ делает активным и готовым для рисования , иннициализирует, заносит в память
+        setContentView(bindingClass.root)                          //ПЕРЕДАЕТСЯ ИЗ bidingClass в класс MainActivity через ее функцию setContentView на
         //class MainActivity чтобы соединить с class MainActivity. Теперь это работает в class MainActivity. Пишем .root чтобы охватывало всЁ что есть
         // в ConstrainLayout
 
-        bidingClass.b1.setOnClickListener {
-            if (maxPerson > currentPerson) {
-                bidingClass.tvResult.text = "Всё в порядке"
-                bidingClass.tvResult.setBackgroundColor(Color.GREEN)
-            }                                                     //если несколько строк в уcловии то ставим {}
-            else {bidingClass.tvResult.text = "превышает максимальное количество персон"
+        bindingClass.b1.setOnClickListener {
 
-              "Превышено максимальное количество посетителей"
-            bidingClass.tvResult.setBackgroundColor(Color.RED)
+            when(currentPerson){
+
+                in 0..maxPerson -> bindingClass.tvResult.text = "Okey!!!"
+                else -> bindingClass.tvResult.text = "Bag....."
+
+                //также можно проверять (уже без when) число например 90 -> bindingClass.tvResult.text = "Okey!!!"
             }
         }
 
 
-        bidingClass.b2.setOnClickListener {
+        bindingClass.b2.setOnClickListener {
 
 
 
         }
-        bidingClass.b3.setOnClickListener {
+        bindingClass.b3.setOnClickListener {
 
 
         }
