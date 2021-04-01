@@ -31,6 +31,14 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        bindingClass.btResult.setOnClickListener {
+
+            val resultValue = bindingClass.edValue.text.toString().toInt()
+            Log.d("MyLog", "Result = $resultValue")
+
+
+        }
+
 
 
 
