@@ -28,11 +28,13 @@ class MainActivity : AppCompatActivity() {
         bidingClass.b1.setOnClickListener {
             if (maxPerson > currentPerson) {
                 bidingClass.tvResult.text = "Всё в порядке"
-                bidingClass.tvResult.setBackgroundColor(Color.RED)
+                bidingClass.tvResult.setBackgroundColor(Color.GREEN)
             }                                                     //если несколько строк в уcловии то ставим {}
-            else bidingClass.tvResult.text = "превышает максимальное количество персон"
+            else {bidingClass.tvResult.text = "превышает максимальное количество персон"
 
               "Превышено максимальное количество посетителей"
+            bidingClass.tvResult.setBackgroundColor(Color.RED)
+            }
         }
 
 
