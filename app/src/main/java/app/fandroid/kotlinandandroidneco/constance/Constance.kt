@@ -6,4 +6,9 @@ object Constance {
 
     const val DIRECTOR = "Andrey"
     const val INGENER = "Sergey"
+
+    const val DIRECTOR_PASSWORD = "4565"
+    const val INGENER_PASSWORD = "1232"
+
+
 }

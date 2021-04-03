@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
                 Constance.DIRECTOR -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
                     val tempText = "Получите Ваши ${Constance.DIRECTOR_SUELDO}"
+                    if (bindingClass.edPassword.text.toString() == Constance.DIRECTOR_PASSWORD)
                     bindingClass.tvResult.text = tempText
                 }
                 Constance.INGENER -> {
