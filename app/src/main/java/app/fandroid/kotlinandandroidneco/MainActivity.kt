@@ -3,6 +3,7 @@ package app.fandroid.kotlinandandroidneco
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import app.fandroid.kotlinandandroidneco.constance.Constance
 import app.fandroid.kotlinandandroidneco.databinding.ActivityMainBinding
 
 
@@ -34,12 +35,5 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-    object Constance{
-        const val DIRECTOR_SUELDO = 10000
-        const val INGENER_SUELDO = 10000
-
-        const val DIRECTOR = "Andrey"
-        const val INGENER = "Sergey"
     }
 }
