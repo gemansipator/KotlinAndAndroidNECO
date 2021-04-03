@@ -22,15 +22,19 @@ class MainActivity : AppCompatActivity() {
                 Constance.DIRECTOR -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
                     val tempText = "Получите Ваши ${Constance.DIRECTOR_SUELDO}"
-                    if (bindingClass.edPassword.text.toString() == Constance.DIRECTOR_PASSWORD)
-                        bindingClass.tvResult.text = tempText
-                        else bindingClass.tvResult.text = "Введен неверный код"
+                    bindingClass.tvResult.text = if (bindingClass.edPassword.text.toString() == Constance.DIRECTOR_PASSWORD){
+                          tempText}
+                        else {"Введен неверный код"
+                    }
 
                 }
                 Constance.INGENER -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
                     val tempText = "Получите Ваши ${Constance.INGENER_SUELDO}"
-                    bindingClass.tvResult.text = tempText
+                    bindingClass.tvResult.text = if (bindingClass.edPassword.text.toString() == Constance.INGENER_PASSWORD){
+                        tempText}
+                    else {"Введен неверный код"
+                    }
                 }
                 else ->{
                     bindingClass.tvResult.visibility = View.VISIBLE
