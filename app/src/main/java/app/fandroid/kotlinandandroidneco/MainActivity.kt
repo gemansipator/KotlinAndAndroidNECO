@@ -18,15 +18,15 @@ class MainActivity : AppCompatActivity() {
 
             val resultValue = bindingClass.edValue.text.toString()
             when(resultValue){
-                "Andrey" -> {
+                Constance.DIRECTOR -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
-                    val tempText = "Получите Ваши ${Constance.ANDREY_SUELDO}"
+                    val tempText = "Получите Ваши ${Constance.DIRECTOR_SUELDO}"
                     bindingClass.tvResult.text = tempText
                 }
-                "Sergey" -> {
+                Constance.INGENER -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
-                    val tempText2 = "Получите Ваши ${Constance.SEREY_SUELDO}"
-                    bindingClass.tvResult.text = tempText2
+                    val tempText = "Получите Ваши ${Constance.INGENER_SUELDO}"
+                    bindingClass.tvResult.text = tempText
                 }
                 else ->{
                     bindingClass.tvResult.visibility = View.VISIBLE
@@ -36,7 +36,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
     object Constance{
-        const val ANDREY_SUELDO = 10000
-        const val SEREY_SUELDO = 10000
+        const val DIRECTOR_SUELDO = 10000
+        const val INGENER_SUELDO = 10000
+
+        const val DIRECTOR = "Andrey"
+        const val INGENER = "Sergey"
     }
 }
