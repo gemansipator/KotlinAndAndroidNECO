@@ -18,27 +18,35 @@ class MainActivity : AppCompatActivity() {
         bindingClass.btResult.setOnClickListener {
 
             val resultValue = bindingClass.edValue.text.toString()
+            bindingClass.imPhoto.visibility = View.VISIBLE
             when(resultValue){
                 Constance.DIRECTOR -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
                     val tempText = "Получите Ваши ${Constance.DIRECTOR_SUELDO}"
-                    bindingClass.tvResult.text = if (bindingClass.edPassword.text.toString() == Constance.DIRECTOR_PASSWORD){
-                          tempText}
-                        else {"Введен неверный код"
+                     if (bindingClass.edPassword.text.toString() == Constance.DIRECTOR_PASSWORD){
+                        bindingClass.tvResult.text = tempText
+                        bindingClass.imPhoto.setImageResource(R.drawable.nikolay)
+                     }
+                        else {bindingClass.tvResult.text = "Введен неверный код"
+                            bindingClass.imPhoto.setImageResource(R.drawable.dulya)
                     }
 
                 }
                 Constance.INGENER -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
                     val tempText = "Получите Ваши ${Constance.INGENER_SUELDO}"
-                    bindingClass.tvResult.text = if (bindingClass.edPassword.text.toString() == Constance.INGENER_PASSWORD){
-                        tempText}
-                    else {"Введен неверный код"
+                    if (bindingClass.edPassword.text.toString() == Constance.INGENER_PASSWORD){
+                        bindingClass.tvResult.text = tempText
+                        bindingClass.imPhoto.setImageResource(R.drawable.iliya)
+                    }
+                    else {bindingClass.tvResult.text = "Введен неверный код"
+                        bindingClass.imPhoto.setImageResource(R.drawable.dulya)
                     }
                 }
                 else ->{
                     bindingClass.tvResult.visibility = View.VISIBLE
                     bindingClass.tvResult.text = "Такого сотрудника нет"
+                    bindingClass.imPhoto.setImageResource(R.drawable.dulya)
                 }
             }
         }
