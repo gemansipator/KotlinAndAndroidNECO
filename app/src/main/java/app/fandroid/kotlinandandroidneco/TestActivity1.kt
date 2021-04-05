@@ -17,12 +17,7 @@ class TestActivity1 : AppCompatActivity() {
         startActivity(intent)
 
     }
-    fun onClickGoTest2(view: View){
 
-        val intent = Intent(this, TestActivity2::class.java)
-        startActivity(intent)
-
-    }
 
 
 }

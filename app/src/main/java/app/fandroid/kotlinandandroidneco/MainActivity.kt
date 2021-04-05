@@ -1,6 +1,8 @@
 package app.fandroid.kotlinandandroidneco
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import app.fandroid.kotlinandandroidneco.databinding.ActivityMainBinding
 
@@ -13,4 +15,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(bindingClass.root)                          //  ПЕРЕДАЕТСЯ ИЗ bidingClass в класс MainActivity через ее функцию setContentView на
 
     }
+
+    fun onClickGoTest2(view: View){
+
+        val intent = Intent(this, TestActivity2::class.java)
+        startActivity(intent)
+
+    }
+    fun onClickClose(view: View){
+
+        finish()
+
+    }
+
+
 }
