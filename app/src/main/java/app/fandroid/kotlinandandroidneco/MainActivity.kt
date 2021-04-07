@@ -14,6 +14,16 @@ class MainActivity : AppCompatActivity() {
         bindingClass = ActivityMainBinding.inflate(layoutInflater) // Надувает класс/ делает активным и готовым для рисования , иннициализирует, заносит в память
         setContentView(bindingClass.root)                          //  ПЕРЕДАЕТСЯ ИЗ bidingClass в класс MainActivity через ее функцию setContentView на
 
+        val message = intent.getStringExtra("key") //создали переменную и через интент пишем ключ,
+        //по которому будет передаваться значение через функцию intent.getStringExtra  (может быть .getIntExtra и т п)
+        bindingClass.tvMessageMain.text = message
+    }
+    fun onClickTest1(view:View){
+        val i = Intent(this, TestActivity1::class.java)
+        i.putExtra("key", "Как тебя зовут?")
+        startActivity(i)
+
+
     }
 
 
