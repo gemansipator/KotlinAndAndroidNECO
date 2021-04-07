@@ -2,4 +2,6 @@
     <string name="app_name">KotlinAndAndroidNECO</string>
     <string name="ok" translatable="false">OK</string>
     <string name="hello">Hello</string>
+    <string name="sing_in" translatable="false">Sing In</string>
+    <string name="sing_up" translatable="false">Sing Up</string>
 </resources>
