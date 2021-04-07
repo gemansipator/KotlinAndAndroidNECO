@@ -20,9 +20,9 @@ class TestActivity1 : AppCompatActivity() {
     }
 
     fun onClickBack(view:View){
-        val i = Intent(this, MainActivity::class.java)
-        i.putExtra("key", "Sergey?")
-        startActivity(i)
+        intent.putExtra("key2", bindingClass.edName.text.toString())
+        setResult(RESULT_OK, intent) //RESULT_OK  или 111 или RESULT_CANSELED - это просто число.
+        finish()
     }
 
 
