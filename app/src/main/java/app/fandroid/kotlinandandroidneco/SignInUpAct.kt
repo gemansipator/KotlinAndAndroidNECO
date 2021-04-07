@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import app.fandroid.kotlinandandroidneco.databinding.ActivityTest1Binding
 
-class TestActivity1 : AppCompatActivity() {
+class SignInUpAct : AppCompatActivity() {
     lateinit var bindingClass: ActivityTest1Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
