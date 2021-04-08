@@ -8,7 +8,7 @@
     tools:context=".SignInUpAct">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imAvatar"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="72dp"
@@ -20,16 +20,17 @@
         app:srcCompat="@drawable/iliya" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/bAvatar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:onClick="onClickAvatar"
         android:text="@string/avatar"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/edLogin"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/edLogin"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imAvatar" />
 
     <EditText
         android:id="@+id/edLogin"
@@ -39,9 +40,9 @@
         android:ems="10"
         android:hint="@string/login"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintEnd_toEndOf="@+id/imAvatar"
+        app:layout_constraintStart_toStartOf="@+id/imAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/bAvatar" />
 
     <EditText
         android:id="@+id/edPassword"
@@ -103,6 +104,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:onClick="onClickDone"
         android:text="@string/done"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/edPassword"
