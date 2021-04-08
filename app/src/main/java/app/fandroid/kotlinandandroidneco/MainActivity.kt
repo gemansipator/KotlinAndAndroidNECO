@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import app.fandroid.kotlinandandroidneco.constance.Constance
 import app.fandroid.kotlinandandroidneco.databinding.ActivityMainBinding
 
@@ -28,24 +29,54 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == Constance.REQUEST_CODE_SIGN_IN){
-            val l = data?.getStringArrayExtra(Constance.LOGIN)
-            val p = data?.getStringArrayExtra(Constance.PASSWORD)
+            val l = data?.getStringExtra(Constance.LOGIN)
+            val p = data?.getStringExtra(Constance.PASSWORD)
             if(login == l && password == p){
+                bindingClass.imAvatar.visibility = View.VISIBLE
                 bindingClass.imAvatar.setImageResource(avatarImageId)
                 val textInfo = "$name $name2 $name3"
                 bindingClass.tvInfo.text = textInfo
+                bindingClass.bHide.visibility = View.GONE
+                bindingClass.bExit.text = "Выйти"
+            } else{
+                bindingClass.imAvatar.visibility = View.VISIBLE
+                bindingClass.imAvatar.setImageResource(R.drawable.dulya)
+                bindingClass.tvInfo.text = "Такого аккаунта не существует!"
+
             }
 
+
         }else if(requestCode == Constance.REQUEST_CODE_SIGN_UP){
-            bindingClass.tvInfo.text = "Такого аккаунта не существует!"
-            bindingClass.imAvatar.setImageResource(R.drawable.dulya)
+            login = data?.getStringExtra(Constance.LOGIN)!!
+            password = data.getStringExtra(Constance.PASSWORD)!!
+            name = data.getStringExtra(Constance.NAME)!!
+            name2 = data.getStringExtra(Constance.NAME2)!!
+            name3 = data.getStringExtra(Constance.NAME3)!!
+            avatarImageId = data.getIntExtra(Constance.AVATAR_ID, 0)
+            bindingClass.imAvatar.visibility = View.VISIBLE
+            bindingClass.imAvatar.setImageResource(avatarImageId)
+            val textInfo = "$name $name2 $name3"
+            bindingClass.tvInfo.text = textInfo
+            bindingClass.bHide.visibility = View.GONE
+            bindingClass.bExit.text = "Выйти"
 
         }
+
     }
     fun onClickSingIn(view: View){
+        if(bindingClass.imAvatar.isVisible && bindingClass.tvInfo.text != "Такого аккаунта не существует!"){
+            bindingClass.imAvatar.visibility = View.INVISIBLE
+            bindingClass.tvInfo.text = ""
+            bindingClass.bHide.visibility = View.VISIBLE
+            bindingClass.bExit.text = getString(R.string.sing_in)
+
+
+        } else {
         val intent = Intent(this, SignInUpAct::class.java)
         intent.putExtra(Constance.SIGN_STATE, Constance.SIGN_IN_STATE)
         startActivityForResult(intent, Constance.REQUEST_CODE_SIGN_IN)
+
+        }
 
     }
     fun onClickSingUp(view: View){
